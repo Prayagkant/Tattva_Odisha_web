@@ -24,44 +24,44 @@ const Navbar = () => {
         }}
         src={assets.logo}
         alt="logo"
-        className="w-36 cursor-pointer"
+        className="cursor-pointer w-36"
       />
-      <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
+      <ul className="hidden gap-5 text-sm text-gray-700 sm:flex">
         <NavLink to="/" className="flex flex-col items-center gap-1">
-          <p>HOME</p>
+          <p className="text-base">HOME</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/products" className="flex flex-col items-center gap-1">
-          <p>PRODUCTS</p>
+          <p className="text-base">PRODUCTS</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
-          <p>ABOUT</p>
+          <p className="text-base">ABOUT</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
-          <p>CONTACT</p>
+          <p className="text-base">CONTACT</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
       </ul>
       <div className="flex items-center gap-6">
         <IoSearch size={22} className="cursor-pointer" />
-        <div className="group relative">
+        <div className="relative group">
           {user ? (
             <ImGrin size={22} className="cursor-pointer" />
           ) : (
             <CgProfile size={22} className="cursor-pointer" />
           )}
 
-          <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
+          <div className="absolute right-0 hidden pt-4 group-hover:block dropdown-menu">
             {/* if user is not logged in then this dropdown will show log in or resister button, if user is logged in then it will show my profile, orders and logout button */}
             {!user ? (
-              <div className="flex flex-col gap-2 w-36 px-5 py-3 bg-slate-100 text-gray-500 rounded">
+              <div className="flex flex-col gap-2 px-5 py-3 text-gray-500 rounded w-36 bg-slate-100">
                 <p className="cursor-pointer hover:text-black">Login</p>
                 <p className="cursor-pointer hover:text-black">Register</p>
               </div>
             ) : (
-              <div className="flex flex-col gap-2 w-36 px-5 py-3 bg-slate-100 text-gray-500 rounded">
+              <div className="flex flex-col gap-2 px-5 py-3 text-gray-500 rounded w-36 bg-slate-100">
                 <p className="cursor-pointer hover:text-black">My Profile</p>
                 <p className="cursor-pointer hover:text-black">Orders</p>
                 <p
